@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/newsapi" name="NewsAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/">
+        <inSequence>
+            <sequence key="main"/>
+        </inSequence>
+        <outSequence>
+        <property name="messageType" value="application/json" scope="axis2"></property>
+
+            <send/>
+        </outSequence>
+        <faultSequence>
+        </faultSequence>
+
+    </resource>
+</api>

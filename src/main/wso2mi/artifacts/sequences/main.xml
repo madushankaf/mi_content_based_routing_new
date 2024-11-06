@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="main" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+
+<switch  source="//type" >
+        <case regex="sports">
+            <send>
+                <endpoint key="sports"/>
+            </send>
+        </case>
+        <case regex="news">
+            <send>
+                <endpoint key="news"/>
+            </send>
+        </case>
+        <default>
+            <payloadFactory media-type="json" template-type="default">
+                <format>{"message":"Unsuccessful request"}</format>
+                <args>
+                </args>
+            </payloadFactory>
+        </default>
+    </switch>
+</sequence>
