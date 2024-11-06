@@ -6,7 +6,7 @@ info:
 servers:
 - url: http://localhost:8290/newsapi
 paths:
-  /:
+  /news:
     post:
       requestBody:
         description: Sample Payload
